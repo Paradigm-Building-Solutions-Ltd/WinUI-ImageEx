@@ -9,6 +9,7 @@
 		<NoWarn>NETSDK1023;CA1416</NoWarn>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<DebugType>embedded</DebugType>
+		<EnableWindowsTargeting>true</EnableWindowsTargeting>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('net8.0'))">
