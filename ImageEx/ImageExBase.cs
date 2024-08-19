@@ -82,7 +82,6 @@ namespace ImageEx
         /// </summary>
         public ImageExBase()
         {
-            Debug.WriteLine("test2");
         }
 
         /// <summary>

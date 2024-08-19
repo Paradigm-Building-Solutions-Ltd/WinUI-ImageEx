@@ -27,7 +27,7 @@ namespace ImageEx
         public object Source
         {
             get { return GetValue(SourceProperty); }
-            set { Debug.WriteLine("test3");  SetValue(SourceProperty, value); }
+            set { SetValue(SourceProperty, value); }
         }
 
         private static void SourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -85,18 +85,15 @@ namespace ImageEx
                 VisualStateManager.GoToState(this, LoadedState, true);
                 ImageExOpened?.Invoke(this, new ImageExOpenedEventArgs());
             }
-            Debug.WriteLine("test4");
         }
 
         private async void SetSource(object source)
         {
-            Debug.WriteLine("test5_1");
             if (!IsInitialized)
             {
                 return;
             }
 
-            Debug.WriteLine("test5_2");
             _tokenSource?.Cancel();
 
             _tokenSource = new CancellationTokenSource();
@@ -108,8 +105,6 @@ namespace ImageEx
                 return;
             }
 
-            Debug.WriteLine("test5_3");
-
             VisualStateManager.GoToState(this, LoadingState, true);
 
             var imageSource = source as ImageSource;
@@ -119,7 +114,7 @@ namespace ImageEx
 
                 return;
             }
-            Debug.WriteLine("test5_4");
+
             var uri = source as Uri;
             if (uri == null)
             {
@@ -132,13 +127,11 @@ namespace ImageEx
                 }
             }
 
-            Debug.WriteLine("test5_6");
             if (!IsHttpUri(uri) && !uri.IsAbsoluteUri)
             {
                 uri = new Uri("ms-appx:///" + uri.OriginalString.TrimStart('/'));
             }
 
-            Debug.WriteLine("test5_7");
             try
             {
                 await LoadImageAsync(uri, _tokenSource.Token);
@@ -152,8 +145,6 @@ namespace ImageEx
                 VisualStateManager.GoToState(this, FailedState, true);
                 ImageExFailed?.Invoke(this, new ImageExFailedEventArgs(e));
             }
-
-            Debug.WriteLine("test5");
         }
 
         private async Task LoadImageAsync(Uri imageUri, CancellationToken token)

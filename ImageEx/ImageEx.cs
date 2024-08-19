@@ -20,7 +20,6 @@ namespace ImageEx
             : base()
         {
             DefaultStyleKey = typeof(ImageEx);
-            Debug.WriteLine(DefaultStyleKey.ToString());
         }
     }
 }

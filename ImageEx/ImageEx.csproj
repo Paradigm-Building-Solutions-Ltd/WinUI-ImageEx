@@ -1,33 +1,30 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
+﻿<Project Sdk="Uno.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>uap10.0.19041;net6.0-windows10.0.19041;net7.0-windows10.0.19041;net8.0-windows10.0.19041</TargetFrameworks>
-		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst;net8.0-windows10.0.22621;net8.0-browserwasm</TargetFrameworks>
+
+		<UnoSingleProject>true</UnoSingleProject>
 		<OutputType>Library</OutputType>
+		<IsPackable>true</IsPackable>
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
 		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
-		<LangVersion>11.0</LangVersion>
-		<NoWarn>NETSDK1023;CA1416</NoWarn>
+		<Nullable>enable</Nullable>
+		<NoWarn>NETSDK1023;CA1416;Uno0001;NU1701;CS0436</NoWarn>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<DebugType>embedded</DebugType>
 		<EnableWindowsTargeting>true</EnableWindowsTargeting>
+		<PackageId>Paradigm.WinUI.Controls.$(AssemblyName)</PackageId>
+		<Authors>Paradigm, Windows Community Toolkit Team</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Description>This package contains a separate ImageEx control from the Windows Community Toolkit 7.x package. Since this control was removed in Toolkit version 8.0, this package was created containing only this control and having no dependencies.</Description>
+		<PackageProjectUrl>https://github.com/Paradigm-Building-Solutions-Ltd/WinUI-ImageEx</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Paradigm-Building-Solutions-Ltd/WinUI-ImageEx</RepositoryUrl>
+		<AssemblyVersion>1.0.2.0</AssemblyVersion>
+		<FileVersion>1.0.2.0</FileVersion>
+		<PackageVersion>1.0.2</PackageVersion>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="$(TargetFramework.Contains('net8.0'))">
-		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-	</PropertyGroup>
-	
-	<ItemGroup Condition="$(TargetFramework.Contains('windows'))">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" />
 	</ItemGroup>
-
-	<ItemGroup Condition="$(TargetFramework.Contains('uap'))">
-		<Page Include="ImageEx.xaml" />
-		<Page Include="Themes\Generic.xaml" />
-	</ItemGroup>
-
-	<ItemGroup Condition="$(TargetFramework.Contains('uap'))">
-		<None Remove="ImageEx.xaml" />
-		<None Remove="Themes\Generic.xaml" />
-	</ItemGroup>
-
 </Project>
