@@ -8,10 +8,15 @@
 		<IsPackable>true</IsPackable>
 		<GenerateLibraryLayout>true</GenerateLibraryLayout>
 		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
-		<Nullable>enable</Nullable>
-		<NoWarn>NETSDK1023;CA1416;Uno0001;NU1701;CS0436</NoWarn>
+		<LangVersion>12.0</LangVersion>
+		<NoWarn>NETSDK1023;CA1416</NoWarn>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('net8.0'))">
+		<IsAotCompatible>true</IsAotCompatible>
+		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
 		<EnableWindowsTargeting>true</EnableWindowsTargeting>
 		<PackageId>Paradigm.WinUI.Controls.$(AssemblyName)</PackageId>
 		<Authors>Paradigm, Windows Community Toolkit Team</Authors>
