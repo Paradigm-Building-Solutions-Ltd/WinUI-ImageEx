@@ -1,4 +1,5 @@
 ﻿namespace ImageEx;
+
 /// <summary>
 /// Provides attached dependency properties for the <see cref="DependencyObject"/> type.
 /// </summary>

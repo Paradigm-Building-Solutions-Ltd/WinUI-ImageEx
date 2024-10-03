@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -14,4 +14,6 @@ public delegate void ImageExOpenedEventHandler(object sender, ImageExOpenedEvent
 /// <summary>
 /// Provides data for the <see cref="ImageEx"/> ImageOpened event.
 /// </summary>
-public class ImageExOpenedEventArgs : EventArgs { }
+public class ImageExOpenedEventArgs : EventArgs
+{
+}

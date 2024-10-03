@@ -12,21 +12,20 @@
 		<NoWarn>NETSDK1023;CA1416</NoWarn>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<DebugType>embedded</DebugType>
-	</PropertyGroup>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <PackageId>Paradigm.WinUI.Controls.$(AssemblyName)</PackageId>
+    <Authors>Paradigm, Windows Community Toolkit Team</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>This package contains a separate ImageEx control from the Windows Community Toolkit 7.x package. Since this control was removed in Toolkit version 8.0, this package was created containing only this control and having no dependencies.</Description>
+    <PackageProjectUrl>https://github.com/Paradigm-Building-Solutions-Ltd/WinUI-ImageEx</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Paradigm-Building-Solutions-Ltd/WinUI-ImageEx</RepositoryUrl>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
+    <PackageVersion>1.0.2</PackageVersion>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="$(TargetFramework.Contains('net8.0'))">
-		<IsAotCompatible>true</IsAotCompatible>
-		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-		<EnableWindowsTargeting>true</EnableWindowsTargeting>
-		<PackageId>Paradigm.WinUI.Controls.$(AssemblyName)</PackageId>
-		<Authors>Paradigm, Windows Community Toolkit Team</Authors>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Description>This package contains a separate ImageEx control from the Windows Community Toolkit 7.x package. Since this control was removed in Toolkit version 8.0, this package was created containing only this control and having no dependencies.</Description>
-		<PackageProjectUrl>https://github.com/Paradigm-Building-Solutions-Ltd/WinUI-ImageEx</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/Paradigm-Building-Solutions-Ltd/WinUI-ImageEx</RepositoryUrl>
-		<AssemblyVersion>1.0.2.0</AssemblyVersion>
-		<FileVersion>1.0.2.0</FileVersion>
-		<PackageVersion>1.0.2</PackageVersion>
+  <PropertyGroup Condition="$(TargetFramework.Contains('net8.0'))">
+    <IsAotCompatible>true</IsAotCompatible>
 	</PropertyGroup>
 
 	<ItemGroup>
