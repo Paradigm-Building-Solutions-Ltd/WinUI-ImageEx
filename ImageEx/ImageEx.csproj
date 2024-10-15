@@ -19,9 +19,9 @@
     <Description>This package contains a separate ImageEx control from the Windows Community Toolkit 7.x package. Since this control was removed in Toolkit version 8.0, this package was created containing only this control and having no dependencies.</Description>
     <PackageProjectUrl>https://github.com/Paradigm-Building-Solutions-Ltd/WinUI-ImageEx</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Paradigm-Building-Solutions-Ltd/WinUI-ImageEx</RepositoryUrl>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
-    <PackageVersion>1.0.2</PackageVersion>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <PackageVersion>1.0.3</PackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(TargetFramework.Contains('net8.0'))">
